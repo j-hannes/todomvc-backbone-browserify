@@ -1,0 +1,35 @@
+{
+  "name": "todomvc-backbone-browserify",
+  "version": "0.0.0",
+  "description": "The famous TodoMVC app built with backbone and browserify.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/J-Hannes/todomvc-backbone-browserify.git"
+  },
+  "keywords": [
+    "todomvc",
+    "backbone",
+    "browserify"
+  ],
+  "author": "Johannes Erber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Hannes/todomvc-backbone-browserify/issues"
+  },
+  "homepage": "https://github.com/J-Hannes/todomvc-backbone-browserify",
+  "devDependencies": {
+    "gulp": "^3.5.6",
+    "express": "^3.4.8",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^0.6.2",
+    "brfs": "^1.0.0",
+    "gulp-livereload": "^1.2.0"
+  },
+  "dependencies": {
+    "backbone": "^1.1.2"
+  }
+}
