@@ -15114,7 +15114,7 @@ var $ = require('jquery')
 Backbone.$ = $
 
 var TodoCollection = require('./collections/todo-collection')
-var AppView = require('./views/app-view.js')
+var AppView = require('./views/app-view')
 
 
 // ----------------------------------------------------------------------------
@@ -15141,7 +15141,7 @@ var App = Backbone.Router.extend({
 //
 module.exports = new App()
 
-},{"./collections/todo-collection":21,"./views/app-view.js":24,"backbone":1,"jquery":18}],21:[function(require,module,exports){
+},{"./collections/todo-collection":21,"./views/app-view":25,"backbone":1,"jquery":18}],21:[function(require,module,exports){
 // ----------------------------------------------------------------------------
 // imports
 //
@@ -15193,6 +15193,9 @@ var TodoModel = Backbone.Model.extend({
 module.exports = TodoModel
 
 },{"backbone":1}],24:[function(require,module,exports){
+exports.ENTER_KEY = 13
+
+},{}],25:[function(require,module,exports){
 // ----------------------------------------------------------------------------
 // imports
 //
@@ -15200,11 +15203,16 @@ var Backbone = require('backbone')
 var $ = require('jquery')
 Backbone.$ = $
 var TodoView = require('../views/todo-view')
+var constants = require('../utils/constants')
 
 
 // ----------------------------------------------------------------------------
 // AppView
 var AppView = Backbone.View.extend({
+  events: {
+    'keypress #new-todo': 'createOnEnter'
+  },
+
   initialize: function() {
     this.listenTo(this.collection, 'add', this.addOne)
   },
@@ -15212,6 +15220,17 @@ var AppView = Backbone.View.extend({
   addOne: function(todo) {
     var view = new TodoView({model: todo})
     this.$('#todo-list').append(view.render().el)
+  },
+
+  createOnEnter: function(e) {
+    if (e.which === constants.ENTER_KEY) {
+      var input = this.$('#new-todo')
+      var title = input.val().trim()
+      if (title) {
+        this.collection.add({title: title})
+        input.val('')
+      }
+    }
   },
 })
 
@@ -15221,7 +15240,7 @@ var AppView = Backbone.View.extend({
 //
 module.exports = AppView
 
-},{"../views/todo-view":25,"backbone":1,"jquery":18}],25:[function(require,module,exports){
+},{"../utils/constants":24,"../views/todo-view":26,"backbone":1,"jquery":18}],26:[function(require,module,exports){
 var Backbone = require('backbone')
 var $ = require('jquery')
 var Handlebars = require('handlebars')

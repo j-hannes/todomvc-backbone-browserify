@@ -6,7 +6,7 @@ var $ = require('jquery')
 Backbone.$ = $
 
 var TodoCollection = require('./collections/todo-collection')
-var AppView = require('./views/app-view.js')
+var AppView = require('./views/app-view')
 
 
 // ----------------------------------------------------------------------------
