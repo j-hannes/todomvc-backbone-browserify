@@ -4,7 +4,7 @@ var source = require('vinyl-source-stream')
 var watchify = require('watchify')
 
 gulp.task('live', ['build', 'server'])
-gulp.task('dev', ['server', 'watch', 'build'])
+gulp.task('dev', ['build', 'server', 'watch'])
 gulp.task('build', ['browserify'])
 gulp.task('default', ['dev'])
 
