@@ -15114,7 +15114,7 @@ var $ = require('jquery')
 Backbone.$ = $
 
 var TodoCollection = require('./collections/todo-collection')
-var AppView = require('./views/app-view.js')
+var AppView = require('./views/app-view')
 
 
 // ----------------------------------------------------------------------------
@@ -15141,7 +15141,7 @@ var App = Backbone.Router.extend({
 //
 module.exports = new App()
 
-},{"./collections/todo-collection":21,"./views/app-view.js":25,"backbone":1,"jquery":18}],21:[function(require,module,exports){
+},{"./collections/todo-collection":21,"./views/app-view":25,"backbone":1,"jquery":18}],21:[function(require,module,exports){
 // ----------------------------------------------------------------------------
 // imports
 //
