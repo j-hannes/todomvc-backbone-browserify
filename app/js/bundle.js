@@ -15141,7 +15141,7 @@ var App = Backbone.Router.extend({
 //
 module.exports = new App()
 
-},{"./collections/todo-collection":21,"./views/app-view.js":24,"backbone":1,"jquery":18}],21:[function(require,module,exports){
+},{"./collections/todo-collection":21,"./views/app-view.js":25,"backbone":1,"jquery":18}],21:[function(require,module,exports){
 // ----------------------------------------------------------------------------
 // imports
 //
@@ -15193,6 +15193,9 @@ var TodoModel = Backbone.Model.extend({
 module.exports = TodoModel
 
 },{"backbone":1}],24:[function(require,module,exports){
+exports.ENTER_KEY = 13
+
+},{}],25:[function(require,module,exports){
 // ----------------------------------------------------------------------------
 // imports
 //
@@ -15200,6 +15203,7 @@ var Backbone = require('backbone')
 var $ = require('jquery')
 Backbone.$ = $
 var TodoView = require('../views/todo-view')
+var constants = require('../utils/constants')
 
 
 // ----------------------------------------------------------------------------
@@ -15219,7 +15223,7 @@ var AppView = Backbone.View.extend({
   },
 
   createOnEnter: function(e) {
-    if (e.which === 13) {
+    if (e.which === constants.ENTER_KEY) {
       var input = this.$('#new-todo')
       var title = input.val().trim()
       if (title) {
@@ -15236,7 +15240,7 @@ var AppView = Backbone.View.extend({
 //
 module.exports = AppView
 
-},{"../views/todo-view":25,"backbone":1,"jquery":18}],25:[function(require,module,exports){
+},{"../utils/constants":24,"../views/todo-view":26,"backbone":1,"jquery":18}],26:[function(require,module,exports){
 var Backbone = require('backbone')
 var $ = require('jquery')
 var Handlebars = require('handlebars')

@@ -5,6 +5,7 @@ var Backbone = require('backbone')
 var $ = require('jquery')
 Backbone.$ = $
 var TodoView = require('../views/todo-view')
+var constants = require('../utils/constants')
 
 
 // ----------------------------------------------------------------------------
@@ -24,7 +25,7 @@ var AppView = Backbone.View.extend({
   },
 
   createOnEnter: function(e) {
-    if (e.which === 13) {
+    if (e.which === constants.ENTER_KEY) {
       var input = this.$('#new-todo')
       var title = input.val().trim()
       if (title) {
