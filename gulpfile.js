@@ -3,12 +3,11 @@ var livereload = require('gulp-livereload')
 var source = require('vinyl-source-stream')
 var watchify = require('watchify')
 
-gulp.task('default', function() {
-  gulp
-    .start('server')
-    .start('watch')
-    .start('browserify')
-})
+gulp
+  .task('live', ['build', 'server'])
+  .task('dev', ['build', 'server', 'watch'])
+  .task('build', ['browserify'])
+  .task('default', ['dev'])
 
 gulp.task('server', function() {
   var express = require('express')
@@ -16,7 +15,9 @@ gulp.task('server', function() {
 
   app
     .use(express.static(__dirname + '/app'))
-    .listen(8080)
+    .listen(8080, function() {
+      console.log('server listening on port 8080') 
+    })
 })
 
 gulp.task('watch', function() {
@@ -35,8 +36,6 @@ gulp.task('browserify', function() {
   bundler.on('update', rebundle)
 
   function rebundle() {
-    console.log('rebundling')
-
     return bundler
       .bundle()
       .pipe(source('bundle.js'))
