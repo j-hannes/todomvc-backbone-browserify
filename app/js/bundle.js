@@ -15227,7 +15227,7 @@ var AppView = Backbone.View.extend({
         input.val('')
       }
     }
-  }
+  },
 })
 
 
