@@ -3,10 +3,11 @@ var livereload = require('gulp-livereload')
 var source = require('vinyl-source-stream')
 var watchify = require('watchify')
 
-gulp.task('live', ['build', 'server'])
-gulp.task('dev', ['build', 'server', 'watch'])
-gulp.task('build', ['browserify'])
-gulp.task('default', ['dev'])
+gulp
+  .task('live', ['build', 'server'])
+  .task('dev', ['build', 'server', 'watch'])
+  .task('build', ['browserify'])
+  .task('default', ['dev'])
 
 gulp.task('server', function() {
   var express = require('express')
