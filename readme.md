@@ -7,11 +7,20 @@ requirements
 * `npm install -g gulp watchify`
 * [Chrome LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
-start
------
+install
+-------
 
 * `npm install`
-* `gulp`
+
+run
+---
+
+* `gulp live`
+
+dev
+---
+
+* `gulp dev`
 
 todos
 -----
