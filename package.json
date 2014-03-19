@@ -30,6 +30,8 @@
     "gulp-livereload": "^1.2.0"
   },
   "dependencies": {
-    "backbone": "^1.1.2"
+    "backbone": "^1.1.2",
+    "jquery": "^2.1.0",
+    "handlebars": "^2.0.0-alpha.2"
   }
 }
