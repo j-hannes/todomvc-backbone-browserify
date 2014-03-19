@@ -26,6 +26,15 @@
       <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
     </footer>
 
+    <script id="item-template" type="text/x-handlebars-template">
+      <div class="view">
+        <input type="checkbox" class="toggle" {{checked}}>
+        <label>{{title}}</label>
+        <button class="destroy"></button>
+      </div>
+      <input type="text" class="edit" value="{{title}}">
+    </script>
+
     <script src="js/bundle.js"></script>
   </body>
 </html>
